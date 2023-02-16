@@ -38,7 +38,7 @@ function ProdContent(props) {
     console.log(products)
 
     useEffect(() => {
-        debugger
+       // //debugger
         if(props.page=='Edit Product'){
             var val=products[selectedIndex]
             setPname(val.productName)
@@ -53,7 +53,7 @@ function ProdContent(props) {
       },[]);
 
     const handleInputChange = (index, event) => {
-        debugger
+        //debugger
         const values = [...inputs];
         if(event.target.name=='productImage'){
             values[index][event.target.name] = URL.createObjectURL(event.target.files[0]);
@@ -91,7 +91,7 @@ function ProdContent(props) {
     }
 
     function OnSaveClick(){
-        debugger
+        //debugger
         if(props.page=='Edit Product'){
             if(pname!='' && category !="" && descri !='' && price !='' && cprice !='' && cost !='' && tax !='' && status !='' && inputs.variant!="" && inputs.price !='' && inputs.stock !='' ){
                 products[selectedIndex]={

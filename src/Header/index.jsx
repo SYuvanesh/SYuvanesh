@@ -20,9 +20,27 @@ import prod from '../HTML/assets/images/icons/Path.svg'
 import $ from 'jquery';
 import '../HTML/js/custom'
 import '../HTML/js/left-sidebar'
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 
 function Header(props) {
+   const [isOpen, setIsOpen] = useState(false);
+
+   useEffect(() => {
+      const proToggle = document.querySelector("#pro_toggle");
+      if (proToggle) {
+        proToggle.addEventListener("click", handleToggle);
+        return () => {
+          proToggle.removeEventListener("click", handleToggle);
+        };
+      }
+    }, []);
+
+    const handleToggle = () => {
+      setIsOpen(!isOpen);
+    }
+
    var selected=props.page
    function OnEcommerce(){
 
@@ -68,8 +86,9 @@ function Header(props) {
  <aside class="sidebar-wrapper open custom-scrollbar wow fadeInLeft">
                 <div class="sidebar-content-wrapper">
                     <ul class="sidebar-list">
-                        <li class="sidebar-list-item has-subnav active" id="listTem">
-                            <button class="sidebar-link" id="pro_toggle" >
+                        {/* <li class="sidebar-list-item has-subnav active " id="listTem" to> */}
+                        <li class={isOpen ? "open sidebar-list-item has-subnav active" : "sidebar-list-item has-subnav active"} id="listTem" to>
+                            <button class="sidebar-link" id="pro_toggle" onClick={OnEcommerce}>
                                 <img src={prod} alt="Product List"></img>
                                 <span class="item-text">Ecommerce</span>
                             </button>

@@ -15,9 +15,6 @@ function Login() {
    var users = JSON.parse(localStorage.getItem("Users"))
    const nav = useNavigate()
 
-   console.log(users)
-   console.log(selector)
-
    function OnEmail(e) {
       setMail(e.target.value)
    }

@@ -34,7 +34,7 @@ setCnfmpass(e.target.value)
 
    function OnSignUpClick(e){
       try{
-         debugger
+         //debugger
          if (validateEmail(mail) && passwd != '' && cnfmpass!="" && passwd==cnfmpass) {
             //setError("Invalid email address");
             setError('')

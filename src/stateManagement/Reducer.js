@@ -841,7 +841,7 @@ const initialState = {
   };
 
   const reduxReducer = (state = initialState, action) => {
-    debugger;
+    //debugger;
     switch (action.type) {
         
       case "Increament":

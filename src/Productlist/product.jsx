@@ -16,7 +16,7 @@ function Product() {
    const nav=useNavigate()
 
    const OnDeleteClick = (e, ID) => {
-      debugger
+      //debugger
       var arr=Prod
       var index = arr.findIndex((x => x.id == ID))
       arr.splice(index, 1)
@@ -34,7 +34,7 @@ function Product() {
    }
 
    const OnProductClick=()=>{
-      debugger
+      //debugger
       if(updateArr.length!=0){
          dispatch(Prod_List(updateArr))
       }else{
@@ -44,7 +44,7 @@ function Product() {
    }
 
    function OnSelect(e){
-      debugger
+      //debugger
       var val=e.target.value
       if(val !=''){
          var arr= products.filter(y => y.category === val)
